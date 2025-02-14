@@ -1,0 +1,22 @@
+[project]
+name = "panel6-stats"
+version = "0.1.0"
+description = "Panel6 - Statistics"
+authors = [
+    {name = "Eodyne Systems"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.12"
+packages = [{ include = "recsys_interface", from = "src" }]
+dependencies = [
+    "numpy (>=2.2.3,<3.0.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "automaton (>=3.2.0,<4.0.0)",
+    "seaborn (>=0.13.2,<0.14.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
