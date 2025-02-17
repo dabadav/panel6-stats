@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item and Exhibit Popularity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            height: 100vh; /* Full viewport height for body */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .left {
+            width: 50%;
+            padding: 20px;
+            overflow-y: auto; /* Add scrolling if plots overflow */
+        }
+
+        .right {
+            width: 50%;
+            padding: 20px;
+        }
+
+        .plot img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        iframe {
+            width: 100%; /* Full width */
+            height: calc(100vh - 40px); /* Full viewport height minus padding */
+            border: none; /* Remove iframe border */
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Section: Plots -->
+        <div class="left">
+            <div class="plot">
+                <h2>Item Popularity Histogram</h2>
+                <img src="assets/item_popularity_histogram.png" alt="Item Popularity Histogram">
+            </div>
+            <div class="plot">
+                <h2>Exhibit Popularity Histogram</h2>
+                <img src="assets/exhibit_popularity_histogram.png" alt="Exhibit Popularity Histogram">
+            </div>
+        </div>
+
+        <!-- Right Section: Embedded Table -->
+        <div class="right">
+            <h2>Item Popularity Table</h2>
+            <iframe src="assets/Item_Popularity_Table.html"></iframe>
+        </div>
+    </div>
+</body>
+</html>
