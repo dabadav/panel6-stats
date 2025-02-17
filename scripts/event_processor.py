@@ -162,15 +162,15 @@ class SessionFSM:
         df_sessions = pd.DataFrame(
             session_data,
             columns=[
-                "SESSION_ID", 
-                "SESSION_START", 
-                "SESSION_END", 
-                "SESSION_DURATION", 
-                "EXHIBIT", 
-                "EXHIBIT_ID", 
-                "EVENT_START", 
-                "EVENT_END", 
-                "EVENT_DURATION", 
+                "SESSION_ID",
+                "SESSION_START",
+                "SESSION_END",
+                "SESSION_DURATION",
+                "EXHIBIT",
+                "EXHIBIT_ID",
+                "EVENT_START",
+                "EVENT_END",
+                "EVENT_DURATION",
                 "ACTIONS_COUNT"
             ]
         )
@@ -178,14 +178,14 @@ class SessionFSM:
         df_actions = pd.DataFrame(
             action_data,
             columns=[
-                "SESSION_ID", 
-                "SESSION_START", 
-                "SESSION_END", 
-                "SESSION_DURATION", 
-                "EXHIBIT", 
-                "EXHIBIT_ID", 
+                "SESSION_ID",
+                "SESSION_START",
+                "SESSION_END",
+                "SESSION_DURATION",
+                "EXHIBIT",
+                "EXHIBIT_ID",
                 "EVENT_START",
-                "EVENT_END", 
+                "EVENT_END",
                 "EVENT_DURATION",
                 "ACTIONS_COUNT",
                 "ACTION",
