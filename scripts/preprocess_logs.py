@@ -80,6 +80,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))  # Get current script di
 OUTPUT_DIR = os.path.join(SCRIPT_DIR, "../data")  # Store outputs within project
 LOG_DIR = "../data/logs"
 LOG_TYPE = "Interactions"
+VERSION = "new"
 
 if __name__ == "__main__":
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -88,10 +89,10 @@ if __name__ == "__main__":
     log_files = get_json_files(LOG_DIR, LOG_TYPE)
     logs, df_metrics = read_json_files(log_files)
 
-    df_metrics.to_csv(f"{OUTPUT_DIR}/logs_metrics.csv", index=False)
+    df_metrics.to_csv(f"{OUTPUT_DIR}/logs_metrics_{VERSION}.csv", index=False)
 
     # Save logs as pickle
-    with open(f"{OUTPUT_DIR}/logs.pkl", "wb") as file:
+    with open(f"{OUTPUT_DIR}/logs_{VERSION}.pkl", "wb") as file:
         pickle.dump(logs, file)
 
     # Good Logs
@@ -99,7 +100,7 @@ if __name__ == "__main__":
     good_logs = [log for log in good_logs if is_session_new(log)]
 
     # Save good logs as pickle file
-    with open(f"{OUTPUT_DIR}/good_logs.pkl", "wb") as file:
+    with open(f"{OUTPUT_DIR}/good_logs_{VERSION}.pkl", "wb") as file:
         pickle.dump(good_logs, file)
 
     # Events Detection
@@ -110,7 +111,7 @@ if __name__ == "__main__":
     session_fsm = SessionFSM(df)
     session_df, action_df = session_fsm.generate_session_dataframe()
 
-    session_df.to_csv(f"{OUTPUT_DIR}/session_data.csv", index=False)
-    action_df.to_csv(f"{OUTPUT_DIR}/action_data.csv", index=False)
+    session_df.to_csv(f"{OUTPUT_DIR}/session_data_{VERSION}.csv", index=False)
+    action_df.to_csv(f"{OUTPUT_DIR}/action_data_{VERSION}.csv", index=False)
 
     print(f"Processed {len(log_files)} log files. Metrics saved to {OUTPUT_DIR}/logs_metrics.csv")
